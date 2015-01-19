@@ -1,0 +1,80 @@
+		body {
+			padding: 0px;
+			font-size: 13px;
+			font-family: 'Raleway', sans-serif;
+		}
+		
+		label {
+			
+		}
+		h2 {
+			font-size: 25px;
+			margin-bottom: 20px;
+			color: #474E69;
+		}
+		#container{
+			margin-left: auto;
+			margin-right: auto;
+			width: 50em;
+			padding: 5px 20px 5px 25px;
+		    width: 50%;
+		    height: 50%;
+		    border: 1px solid #999999;
+		    background-color:#FFF;
+		    border-radius: 8px;
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;	
+		}
+		input, textarea {
+			padding: 10px;
+			border: 1px solid #E5E5E5;
+			width: 100%;
+			max-width: 200px;
+			color: #999999;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+			-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
+		}
+		textarea {
+			font-family: 'Raleway', sans-serif;
+			width: 100%;
+			height: 150px;
+			max-width: 400px;
+			line-height: 18px;
+		}
+		input:hover, textarea:hover,
+		input:focus, textarea:focus {
+			border-color: 1px solid #C9C9C9;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+			-moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;	
+		}
+		.form label {
+			margin-left: 10px;
+			color: #999999;
+		}
+		.submit input {
+			width: 100%;
+			max-width: 100px; 
+			height: 40px;
+			background-color: #474E69; 
+			color: #FFF;
+			border-radius: 3px;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;		
+		}
+		.check input {
+			width:auto;
+			margin: 0 0 0 5;
+			padding: 0;
+		}
+		
+		.sec select {
+			border: 1px solid #E5E5E5;
+			width: 100%;
+			max-width: 200px;
+			color: #999999;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+			-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
+		}
