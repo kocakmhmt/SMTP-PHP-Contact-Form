@@ -3,7 +3,7 @@
 /*~ index.php
 .---------------------------------------------------------------------------.
 |  Software: SMTP PHP Contact Form                                          |
-|   Version: 1.0                                                            |
+|   Version: 1.1                                                            |
 |   Contact: kodofisi.org											        |
 |      Info: http://kodofisi.org			                                |
 |   Support: http://kodofisi.org			         	                    |
@@ -40,6 +40,34 @@
 			$("div#container").hide(100); 
 			} 
 			})}; 
+			function formReset(id) {
+			$('#'+id).each(function(){
+			this.reset();
+			});
+			}
+			function kontrolet(){
+        var name=$('#name').val();
+			name=jQuery.trim(name);
+		var email=$('#email').val();
+			email=jQuery.trim(email);
+		var mess=$('#text').val();
+			mess=jQuery.trim(mess);
+		var tel=$('#phone').val();
+			tel=jQuery.trim(tel);
+			if(name==''){
+			alert("Please check your name");
+			} 	
+			else if(email==''){
+				alert("Please check your E-Mail");
+				}
+			else if (tel==''){
+				alert("Please check your phone");
+				}
+				else if(mess==''){
+				alert("Please check your Message");
+				}
+			else { sendmessage() } 
+				}
 			</script>
 			
 </head>
@@ -80,14 +108,15 @@
 		</p>
 		
 		<p class="submit">
-			<input type="submit" onclick="sendmessage();" value="Send" />
+			<input type="submit" onclick="kontrolet()" value="Send" />
 			<input type="reset" value="Reset" />
 		</p>
 	</form>
 	
 	</div>
 	<div id="send"></div>
-	<center>Mehmet Koçak © 2015 | <a href="license.txt">GNU/GPL</a></center>
+	<p><center>Mehmet Koçak © 2015 | <a href="http://facebook.com/kocakmhmt">Facebook!</a>, <a href="http://twitter.com/kocakmhmt">Twitter</a>, <a href="mailto:mkocak@kodofisi.org">E-Posta</a> | <a href="LICENSE">GNU/GPL</a></p>
+	<p><a href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></center></p>
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

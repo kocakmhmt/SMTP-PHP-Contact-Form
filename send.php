@@ -10,23 +10,7 @@ $web=$_POST['web'];
 $domain=$_SERVER['HTTP_HOST'];
 $ipadress=$_SERVER['REMOTE_ADDR'];
 $date = date("d.m.Y"); 
-$time = date("H:i:s"); 
-
-if(empty($name)){
-		echo "<center>Please enter your <b>Name</b> <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
-}
-elseif(empty($email)){
-		echo "<center>Please enter your <b>e-mail</b> <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
-}
-elseif(empty($phone)){
-		echo "<center>Please enter your <b>phone</b> <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
-}
-elseif(empty($text))
-{
-	echo "<center>Please enter your <b>message</b> <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
-}
-	else{
-		
+$time = date("H:i:s"); 	
 require("class.phpmailer.php");
 $mail = new PHPMailer();
 $mail->IsSMTP();
@@ -38,15 +22,14 @@ $mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP usernam
 $mail->Fromname = "Mehmet Koçak"; // from name
 $mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
 $mail->Subject  =  $_POST['subject'];
-$content = "<h2>You have a message by $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress </p>";
+$content = "<h2>You have a message by $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress</h5> </p><p><h5>This message was sent using SMTP-PHP-Contact-Form by kocakmhmt</h5></p>";
 $mail->MsgHTML($content);
 if(!$mail->Send())
 {
-   echo "<center>Error! Its wrong!</center>";
+   echo "<center>Ooppss, Something went wrong!</center>";
    echo "Mailer Error: " . $mail->ErrorInfo;
    exit;
 }
 echo "<center>Thank you! Your message has reached us! <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
-}
 }
 ?>
