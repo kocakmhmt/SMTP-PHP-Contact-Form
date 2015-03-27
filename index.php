@@ -22,8 +22,8 @@
 		<meta name="author" content="Mehmet Koçak">
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/style.css" />
-		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+		<link rel="stylesheet" href="style.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 			<script type="text/javascript"> 
 			function gostergizle()
 			{
@@ -33,7 +33,7 @@
 			var veriler = $('#contact_form').serialize(); 
 			$.ajax({ 
 			type: "POST", 
-			url: "inc/send.php", 
+			url: "send.php", 
 			data: veriler, 
 			success:function(cevap){ 
 			$("#send").html(""+cevap); 
@@ -68,20 +68,14 @@
 				}
 			else { sendmessage() } 
 				}
-</script>
+			</script>
+			
 </head>
 
 <body>
-	<div class="logobar">
-		<center><img src="images/logo.png" alt="kocakmhmt logo"></center>
-		</div>
+		<center><img src="logo.png" alt="kocakmhmt logo"></center>
 		
-				
-		<!-- Form -->
-		
-		
-		
-		<div style="margin-top: 150px" id="container">
+		<div id="container">
 			<h2>Contact Form</h2>
 	<form class="form" id="contact_form" name="contact_form" method="post" action="javascript:void(0);">
 		<p class="name">
@@ -120,25 +114,9 @@
 	</form>
 	
 	</div>
-		<div class="linkler">
-	<a href="about.html">What is this?</a> |  <a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a>
-	</div>
-	<div style="margin-top: 150px" id="send"></div>
-	
-	
-	
-	<!-- Form -->
-
-				
-		
-		
-	<div class="footer">
-	<p>Mehmet Koçak © 2015
-<a href=""><img src="images/twitter.png" /></a>
-<a href=""><img src="images/mail.png" /></a></p>
-	
-	
-	</div>
+	<div id="send"></div>
+	<p><center>Mehmet Koçak © 2015 | <a href="http://facebook.com/kocakmhmt">Facebook!</a>, <a href="http://twitter.com/kocakmhmt">Twitter</a>, <a href="mailto:mkocak@kodofisi.org">E-Posta</a> | <a href="LICENSE">GNU/GPL</a></p>
+	<p><a href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></center></p>
 	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

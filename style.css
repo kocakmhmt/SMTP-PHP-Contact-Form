@@ -1,33 +1,16 @@
-		html {
-	position: relative;
-    min-height: 100%;
-		}
-		
 		body {
-			 margin: 0 0 100px;
 			padding: 0px;
 			font-size: 13px;
 			font-family: 'Raleway', sans-serif;
 		}
 		
-		#alttaraf a {
-			color:#333;
+		label {
+			
 		}
 		h2 {
 			font-size: 25px;
 			margin-bottom: 20px;
 			color: #474E69;
-		}
-		
-		#container2{
-			margin-left: auto;
-			margin-right: auto;
-			width: 50em;
-			padding: 5px 20px 5px 25px;
-		    width: 50%;
-		    height: 50%;
-		    background-color:#FFF;
-
 		}
 		#container{
 			margin-left: auto;
@@ -95,90 +78,3 @@
 			-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
 			-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;		
 		}
-		
-
-		.logobar {
-    		position: fixed;  
-    		width: 100%;  
-    		left: 0;  
-    		top: 0;  
-    		border-top: 0;  
-			background:#6accff;
-			height:auto;
-		}
-		
-		
-		.footer {
-			color: #999999;
-	position: absolute;
-    left: 0;
-    bottom: 0;
-    height: auto;
-    width: 100%;
-		}
-		
-		.footer p {
-			margin-left: 25%;
-			margin-right:25%;
-		}
-		
-		.footer a {
-			margin-right:3px;
-			float:right;
-		}
-		#wrapper {
-
-
-	top:0;left:0;
-
-	overflow:hidden;
-}
-
-	#mask {
-		width:500%;
-		height:100%;
-
-	}
-
-	.item {
-		width:20%;
-		height:100%;
-		float:left;
-
-	}
-	
-	
-	.content {
-		margin:150px auto;
-
-	}
-	
-	.selected {
-		background:#fff;
-		font-weight:700;
-	}
-
-	.clear {
-		clear:both;
-	}
-
-	.linkler {
-		margin-top:20px;
-			margin-left: 25%;
-			margin-right:25%;
-	}
-	
-	.linkler a {
-		text-decoration: none;
-		font-weight:bold;
-		color: #0074b1;
-	}
-	
-	.linkler a:hover {
-		color: #6bccff;
-	}
-	.icerik {
-		margin: 0 auto;
-		margin-left:10%;
-		margin-right:10%;
-	}
