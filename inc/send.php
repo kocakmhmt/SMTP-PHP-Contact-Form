@@ -17,7 +17,7 @@ $mail->IsSMTP();
 $mail->Host     = "mail.kodofisi.org"; // SMTP servers
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->Username = "mkocak@kodofisi.org";  // SMTP username
-$mail->Password = "kocak.123"; // SMTP password
+$mail->Password = ""; // SMTP password
 $mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP username
 $mail->Fromname = "Mehmet Koçak"; // from name
 $mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
