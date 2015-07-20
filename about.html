@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<?php
-/*~ index.php
+<!--
+/*~ about.html
 .---------------------------------------------------------------------------.
 |  Software: SMTP PHP Contact Form                                          |
-|   Version: 1.1                                                            |
+|   Version: 1.3                                                            |
 |   Contact: kodofisi.org											        |
 |      Info: http://kodofisi.org			                                |
 |   Support: http://kodofisi.org			         	                    |
@@ -12,8 +12,8 @@
 | Copyright (c) 2014-2015, Mehmet Koçak. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 */
-?>
-<html lang="en">
+-->
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,51 +24,6 @@
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css" />
 		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
-			<script type="text/javascript"> 
-			function gostergizle()
-			{
-			$("div#container").show(100); 
-			}
-			function sendmessage(){ 
-			var veriler = $('#contact_form').serialize(); 
-			$.ajax({ 
-			type: "POST", 
-			url: "inc/send.php", 
-			data: veriler, 
-			success:function(cevap){ 
-			$("#send").html(""+cevap); 
-			$("div#container").hide(100); 
-			} 
-			})}; 
-			function formReset(id) {
-			$('#'+id).each(function(){
-			this.reset();
-			});
-			}
-			function kontrolet(){
-        var name=$('#name').val();
-			name=jQuery.trim(name);
-		var email=$('#email').val();
-			email=jQuery.trim(email);
-		var mess=$('#text').val();
-			mess=jQuery.trim(mess);
-		var tel=$('#phone').val();
-			tel=jQuery.trim(tel);
-			if(name==''){
-			alert("Please check your name");
-			} 	
-			else if(email==''){
-				alert("Please check your E-Mail");
-				}
-			else if (tel==''){
-				alert("Please check your phone");
-				}
-				else if(mess==''){
-				alert("Please check your Message");
-				}
-			else { sendmessage() } 
-				}
-</script>
 </head>
 
 <body>
@@ -76,10 +31,11 @@
 		<center><a href="index.php"><img src="images/logo.png" alt="kocakmhmt logo"></center></a>
 		</div>
 		
-				
-			
-		
-		<div style="margin-top: 150px" id="container2">
+	<div class="linkler">
+	<center><a  href="index.php">Contact Form</a>  <a  class="active" href="about.html">What is this?</a> <a  href="how.html">How to Use?</a>  <b><a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></b></center>
+	</div>
+    
+		<div id="container2">
 			<h2>About</h2>
 			This Contact Form using a SMTP. We are using the SMTP is not the PHP mail() function because the mail function can be attached to the mails sent by the ip filter . Can fall to junk box. Used by many open-source projects: Wordpress, Drupal, 1CRM, SugarCRM, Yii, Joomla! and many more Integrated SMTP support - send without a local mail server SMTP authentication with LOGIN, PLAIN, NTLM and CRAM-MD5 mechanisms over SSL and TLS transports
 			<p><li>Easy integration/instructions into your current PHP site</li>
@@ -90,16 +46,16 @@
 <li>No database required</li>
 <li>Mobile Friendly</li>
 <li>No Refresh Page and save your bandwith</li></p>
-<p><b>Server&Browser Support</b></p>
+<p><b>Server & Browser Support</b></p>
 <li>PHP4+</li>
 	<li>IE10+</li>
 		<li>Latest Chrome,Firefox,Safari</li>
-			
+			<p></p>
 			</div>
 			
-	<div class="linkler">
-	<a href="index.php"><- Contact Form</a> | <a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a>
-	</div>
+    <center><script type="text/javascript" src="http://app.winwords.adhood.com/95116,220,90"></script></center>
+    <center><script type="text/javascript" src="http://app.winwords.adhood.com/92964,670,90"></script></center>
+
 				
 		
 		

@@ -1,6 +1,13 @@
 <?php
-if($_POST)
-{
+session_start();
+if ( isset($_POST['guvenlikKodu']) && $_POST['guvenlikKodu'] ){
+ $guvenlikKontrol = false;
+ if ( $_POST['guvenlikKodu'] == $_SESSION['guvenlikKodu'] ){
+ $guvenlikKontrol = true;
+ }
+ 
+ if ( $guvenlikKontrol ){
+
 $text=$_POST['text'];
 $name=$_POST['name'];
 $phone=$_POST['phone'];
@@ -17,19 +24,23 @@ $mail->IsSMTP();
 $mail->Host     = "mail.kodofisi.org"; // SMTP servers
 $mail->SMTPAuth = true;     // turn on SMTP authentication
 $mail->Username = "mkocak@kodofisi.org";  // SMTP username
-$mail->Password = ""; // SMTP password
+$mail->Password = "password"; // SMTP password
 $mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP username
 $mail->Fromname = "Mehmet Koçak"; // from name
 $mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
 $mail->Subject  =  $_POST['subject'];
-$content = "<h2>You have a message by $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress</h5> </p><p><h5>This message was sent using SMTP-PHP-Contact-Form by kocakmhmt</h5></p>";
+$content = "<h2>You have a message by $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Website: $web</b> </p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress</h5> </p><p><h5>This message was sent using SMTP-PHP-Contact-Form by kocakmhmt</h5></p>";
 $mail->MsgHTML($content);
 if(!$mail->Send())
 {
    echo "<center>Error! Its wrong!</center>";
    echo "Mailer Error: " . $mail->ErrorInfo;
+    echo "<center><p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
    exit;
 }
 echo "<center>Thank you! Your message has reached us! <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
+ } else {
+ echo "<center>Please check Security Code! <p><input type='submit' onclick='gostergizle();' value='Back' /></p></center>";
+ }
 }
 ?>

@@ -6,6 +6,7 @@ Used by many open-source projects: Wordpress, Drupal, 1CRM, SugarCRM, Yii, Jooml
 1- Form Control with PHP&Ajax
 2- No Refresh page, save your bandwidth
 3- Easy setup and customization code for you
+4- captcha control
 
 ## Settings
 Adjust according to your own line file specified in "send.php", copy to your FTP server . Add to your page where you want the form in the "index.php" file . Make sure that all the files in the same folder .

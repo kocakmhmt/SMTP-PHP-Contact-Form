@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+/*~ how.html
+.---------------------------------------------------------------------------.
+|  Software: SMTP PHP Contact Form                                          |
+|   Version: 1.3                                                            |
+|   Contact: kodofisi.org											        |
+|      Info: http://kodofisi.org			                                |
+|   Support: http://kodofisi.org			         	                    |
+| ------------------------------------------------------------------------- |
+|     Admin: Mehmet Koçak (project admininistrator)                         |
+| Copyright (c) 2014-2015, Mehmet Koçak. All Rights Reserved.               |
+| ------------------------------------------------------------------------- |
+*/
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>PHP Contact Form / How to Use? - kocakmhmt</title>
+		<meta name="description" content="SMTP PHP Contact Form / kodofisi.org">
+		<meta name="author" content="Mehmet Koçak">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+
+</head>
+
+<body>
+	<div class="logobar">
+		<center><a href="index.php"><img src="images/logo.png" alt="kocakmhmt logo"></center></a>
+		</div>
+		
+	<div class="linkler">
+	<center><a  href="index.php">Contact Form</a>  <a   href="about.html">What is this?</a> <a class="active"  href="how.html">How to Use?</a>  <b><a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></b></center>
+	</div>
+    
+		<div id="container2">
+			<h2>How to Use?</h2>
+			<p>First, include the code your page for SECURITY image</p>
+            <textarea readonly>
+<?php session_start(); ?>
+			</textarea>
+            <p>Include jQuery on your page</p>
+            <textarea readonly>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+            </textarea>
+			
+            <p>This code should be included between <b>HEAD TAG</b> to control by jQuery</p>
+            <textarea id="how" readonly>
+<script type="text/javascript"> 
+function gostergizle()
+{
+$("div#container").show(100); 
+}
+function sendmessage(){ 
+var veriler = $('#contact_form').serialize(); 
+$.ajax({ 
+type: "POST", 
+url: "inc/send.php", 
+data: veriler, 
+success:function(cevap){ 
+$("#send").html(""+cevap); 
+$("div#container").hide(100); 
+} 
+})}; 
+function formReset(id) {
+$('#'+id).each(function(){
+this.reset();
+});
+}
+function kontrolet(){
+var name=$('#name').val();
+name=jQuery.trim(name);
+var email=$('#email').val();
+email=jQuery.trim(email);
+var mess=$('#text').val();
+mess=jQuery.trim(mess);
+var tel=$('#phone').val();
+tel=jQuery.trim(tel);
+var guvenlikKodu=$('#guvenlikKodu').val();
+guvenlikKodu=jQuery.trim(guvenlikKodu);        
+if(name==''){
+alert("Please check your name");
+} 	
+else if(email==''){
+alert("Please check your E-Mail");
+}
+ else if (tel==''){
+alert("Please check your Phone");
+}
+ else if (guvenlikKodu==''){
+alert("Security code is empty!");
+}
+  else if(mess==''){
+alert("Please check your Message");
+}
+else { sendmessage() } 
+}
+</script>           
+            </textarea>
+            
+            
+            <p>This <b>CONTACT FORM</b> codes in <b>index.php</b>:</p>
+            <textarea style="height:425px" readonly>
+            <form class="form" id="contact_form" name="contact_form" method="post" action="javascript:void(0);">
+		<p class="name">
+			<input type="text" name="name" id="name" placeholder="Your Name*"  required/>
+			<label for="name">Name Surname<font color="red">*</font></label>
+		</p>
+		<p class="email">
+			<input type="email" name="email" id="email" placeholder="mail@example.com*" required />
+			<label for="email">Email<font color="red">*</font></label>
+		</p>
+		<p class="phone">
+			<input type="tel" name="phone" id="phone" placeholder="+00123456789*"  required/>
+			<label for="phone">Phone<font color="red">*</font></label>
+		</p>
+		<p class="web">
+			<input type="url" name="web" id="web" placeholder="www.example.com" />
+			<label for="web">Website</label>
+		</p>
+		<p class="sec">
+		<select  name="subject">
+		  <option value="General">General</option>
+		  <option value="product">Product Support</option>
+		  <option value="new">New Business</option>
+		  <option value="other">Other</option>
+		</select>
+		<label>Contact Reason</label>
+		</p>  	
+    <input type="text" name="guvenlikKodu" id="guvenlikKodu" required />
+    <label for="guvenlikKodu"></label>
+ <img src="inc/captcha.php" />
+		<p class="text">
+			<textarea id="text" name="text" id="text"placeholder="Your Message*"  required/><textarea>
+		</p>
+	
+		<p class="submit">
+			<input type="submit" onclick="kontrolet()" value="Send" />
+			<input type="reset" value="Reset" />
+		</p>
+	</form>
+	
+	</div>
+		
+	<div style="margin-top: 80px" id="send"></div>
+            </textarea>
+            
+            
+	<p> Codes which you must change in <b>inc/send.php</b></p>
+            <textarea style="height:110px" readonly>
+$mail->Host     = "mail.kodofisi.org"; // SMTP servers
+$mail->SMTPAuth = true;     // turn on SMTP authentication
+$mail->Username = "mkocak@kodofisi.org";  // SMTP username
+$mail->Password = "password"; // SMTP password
+$mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP username
+$mail->Fromname = "Mehmet Koçak"; // from name
+$mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
+            </textarea>
+	</div>
+
+			</div>
+			
+    <center><script type="text/javascript" src="http://app.winwords.adhood.com/95116,220,90"></script></center>
+    <center><script type="text/javascript" src="http://app.winwords.adhood.com/92964,670,90"></script></center>
+
+				
+		
+		
+	<div class="footer">
+	<p>Mehmet Koçak © 2015 
+<a href="http://twitter.com/kocakmhmt"><img src="images/twitter.png" /></a>
+<a href="mailto:mkocak@kodofisi.org"><img src="images/mail.png" /></a></p>
+	</div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47181399-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

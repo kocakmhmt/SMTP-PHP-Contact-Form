@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <?php
 /*~ index.php
 .---------------------------------------------------------------------------.
 |  Software: SMTP PHP Contact Form                                          |
-|   Version: 1.2                                                            |
+|   Version: 1.3                                                            |
 |   Contact: kodofisi.org											        |
 |      Info: http://kodofisi.org			                                |
 |   Support: http://kodofisi.org			         	                    |
@@ -12,8 +12,9 @@
 | Copyright (c) 2014-2015, Mehmet Koçak. All Rights Reserved.               |
 | ------------------------------------------------------------------------- |
 */
+session_start();
 ?>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,6 +24,7 @@
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 		<link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
 			<script type="text/javascript"> 
 			function gostergizle()
@@ -54,34 +56,43 @@
 			mess=jQuery.trim(mess);
 		var tel=$('#phone').val();
 			tel=jQuery.trim(tel);
+        var guvenlikKodu=$('#guvenlikKodu').val();
+			guvenlikKodu=jQuery.trim(guvenlikKodu);        
+        
 			if(name==''){
 			alert("Please check your name");
 			} 	
 			else if(email==''){
 				alert("Please check your E-Mail");
 				}
-			else if (tel==''){
-				alert("Please check your phone");
+            else if (tel==''){
+				alert("Please check your Phone");
 				}
-				else if(mess==''){
+            else if (guvenlikKodu==''){
+				alert("Security code is empty!");
+				}
+            else if(mess==''){
 				alert("Please check your Message");
 				}
+
 			else { sendmessage() } 
 				}
 </script>
 </head>
 
 <body>
-	<div class="logobar">
+
 		<center><img src="images/logo.png" alt="kocakmhmt logo"></center>
-		</div>
+
 		
 				
 		<!-- Form -->
 		
+		<div class="linkler">
+	<center><a class="active" href="#">Contact Form</a>  <a href="about.html">What is this?</a> <a  href="how.html">How to Use?</a> <b><a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></b></center>
+	</div>
 		
-		
-		<div style="margin-top: 150px" id="container">
+		<div id="container">
 			<h2>Contact Form</h2>
 	<form class="form" id="contact_form" name="contact_form" method="post" action="javascript:void(0);">
 		<p class="name">
@@ -89,30 +100,33 @@
 			<label for="name">Name Surname<font color="red">*</font></label>
 		</p>
 		<p class="email">
-			<input type="email" name="email" id="email" placeholder="mail@example.com*" required />
+			<input type="text" name="email" id="email" placeholder="mail@example.com*" required />
 			<label for="email">Email<font color="red">*</font></label>
 		</p>
 		<p class="phone">
-			<input type="tel" name="phone" id="phone" placeholder="+00123456789*"  required/>
-			<label for="email">Phone<font color="red">*</font></label>
+			<input type="text" name="phone" id="phone" placeholder="+00123456789*"  required/>
+			<label for="phone">Phone<font color="red">*</font></label>
 		</p>
 		<p class="web">
-			<input type="url" name="web" id="web" placeholder="www.example.com" />
+			<input type="text" name="web" id="web" placeholder="www.example.com" />
 			<label for="web">Website</label>
 		</p>
 		<p class="sec">
-		<select name="subject">
+		<select  name="subject">
 		  <option value="General">General</option>
 		  <option value="product">Product Support</option>
 		  <option value="new">New Business</option>
 		  <option value="other">Other</option>
 		</select>
 		<label>Contact Reason</label>
-		</p>
+		</p>  	
+    <input type="text" name="guvenlikKodu" id="guvenlikKodu" required />
+    <label for="guvenlikKodu"></label>
+ <img src="inc/captcha.php" />
 		<p class="text">
-			<textarea name="text" id="text"placeholder="Your Message*"  required/></textarea>
+			<textarea id="text" name="text" id="text"placeholder="Your Message*"  required/></textarea>
 		</p>
-		
+	
 		<p class="submit">
 			<input type="submit" onclick="kontrolet()" value="Send" />
 			<input type="reset" value="Reset" />
@@ -120,16 +134,13 @@
 	</form>
 	
 	</div>
-		<div class="linkler">
-	<a href="about.html">What is this?</a> |  <a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a>
-	</div>
-	<div style="margin-top: 150px" id="send"></div>
+		
+	<div style="margin-top: 80px" id="send"></div>
 	
 	
 	
 	<!-- Form -->
-
-				
+<center><script type="text/javascript" src="http://app.winwords.adhood.com/92964,670,90"></script></center>
 		
 		
 	<div class="footer">
