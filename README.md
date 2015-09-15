@@ -23,4 +23,4 @@ $mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Nam
 ```
 
 ## Online demo
-[http://www.kodofisi.org/html5/phpmailer](http://www.kodofisi.org/html5/phpmailer)
+[http://www.kocakmhmt.com/phpmailer](http://www.kocakmhmt.com/phpmailer)
