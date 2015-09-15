@@ -89,7 +89,7 @@ session_start();
 		<!-- Form -->
 		
 		<div class="linkler">
-	<center><a class="active" href="#">Contact Form</a>  <a href="about.html">What is this?</a> <a  href="how.html">How to Use?</a> <b><a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></b> <a target="_blank" href="https://www.paypal.me/kocakmhmt"><img height="40" width="130" src="images/paypal.png"></a></center>
+	<center><a class="active" href="#">Contact Form</a>  <a href="about.html">What is this?</a> <a  href="how.html">How to Use?</a> <b><a target="_blank" href="https://github.com/kocakmhmt/SMTP-PHP-Contact-Form">Download!</a></b> <a target="_blank" href="https://www.paypal.me/kocakmhmt"><img height="40" width="130" src="http://www.kocakmhmt.com/phpmailer/images/paypal.png"></a></center>
 	</div>
 		
 		<div id="container">
