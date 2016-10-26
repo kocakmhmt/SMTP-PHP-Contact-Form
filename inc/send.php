@@ -29,7 +29,7 @@ $mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP usernam
 $mail->Fromname = "Mehmet Koçak"; // from name
 $mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
 $mail->Subject  =  $_POST['subject'];
-$content = "<h2>You have a message by $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Website: $web</b> </p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress</h5> </p><p><h5>This message was sent using SMTP-PHP-Contact-Form by kocakmhmt</h5></p>";
+$content = "<h2>You have a message from $domain</h2>  <p><b>Name:</b>$name</p> <p><b>E-Mail:</b>$email</p> <p><b>Phone:</b>$phone</p> <p><b>Subject:</b>$subject</p> <p><b>Website: $web</b> </p> <p><b>Message:</b>$text</p> <p><h5>Date: $date . $time </h5></p> <p><h5>IP Adress of User: $ipadress</h5> </p><p><h5>This message sent by SMTP-PHP-Contact-Form kocakmhmt</h5></p>";
 $mail->MsgHTML($content);
 if(!$mail->Send())
 {
