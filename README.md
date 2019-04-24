@@ -13,14 +13,14 @@ Adjust according to your own line file specified in "send.php", copy to your FTP
 
 ## Codes which you must change in send.php
 ```bash
-$mail->Host     = "mail.kodofisi.org"; // SMTP servers
+$mail->Host     = "mail.kocakm.com"; // SMTP servers
 $mail->SMTPAuth = true;     // turn on SMTP authentication
-$mail->Username = "mkocak@kodofisi.org";  // SMTP username
+$mail->Username = "m@kocakm.com";  // SMTP username
 $mail->Password = "password"; // SMTP password
-$mail->From     = "mkocak@kodofisi.org"; // it must be a match with SMTP username
+$mail->From     = "m@kocakm.com"; // it must be a match with SMTP username
 $mail->Fromname = "Mehmet Koçak"; // from name
-$mail->AddAddress("mkocak@kodofisi.org","Mehmet Koçak"); // SMTP username , Name Surname
+$mail->AddAddress("m@kocakm.com","Mehmet Koçak"); // SMTP username , Name Surname
 ```
 
 ## Online demo
-[http://www.kocakmhmt.com/phpmailer](http://www.kocakmhmt.com/phpmailer)
+[http://www.kocakm.com/phpmailer](http://www.kocakm.com/phpmailer)
